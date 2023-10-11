@@ -3,7 +3,6 @@ import { EmailContext } from "../../providers/EmailContext/Emailcontext";
 export const GenerateEmail = () => {
   const { email } = useContext(EmailContext);
   const userEmail = email?.addresses?.[0]?.address || "";
-  console.log(email);
   const inputRef = useRef(null);
   const handleCopy = () => {
     const input = inputRef.current;
@@ -24,7 +23,7 @@ export const GenerateEmail = () => {
             readOnly
             ref={inputRef}
           />
-          <button onClick={() => handleCopy}>Copy</button>
+          <button onClick={() => handleCopy()}>Copy</button>
         </div>
         <div>
           <span>Autorefresh in</span>
